@@ -59,3 +59,8 @@ jobs:
         with:
           name: OthelloGame-macos
           path: dist/OthelloGame.app
+
+      - name: Authenticate Butler
+        env:
+          ITCHIO_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
+        run: butler login --api-key "$ITCHIO_API_KEY"
